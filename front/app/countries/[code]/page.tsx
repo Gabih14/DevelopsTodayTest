@@ -1,4 +1,5 @@
 import React from 'react';
+import PopulationChart from '../../components/PopulationChart';
 
 interface BorderCountry {
     commonName: string;
@@ -9,7 +10,7 @@ interface BorderCountry {
 }
 
 interface PopulationData {
-    year: string;
+    year: number;
     population: number;
 }
 
@@ -64,22 +65,7 @@ export default async function CountryPage({ params }: { params: { code: string }
 
             <section>
                 <h2 className="text-2xl font-semibold text-gray-700 mb-4">Population Over Time</h2>
-                <table className="min-w-full table-auto">
-                    <thead>
-                        <tr className="bg-gray-200">
-                            <th className="px-4 py-2 text-left text-sm font-medium text-gray-600">Year</th>
-                            <th className="px-4 py-2 text-left text-sm font-medium text-gray-600">Population</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {country.populationData.map((data) => (
-                            <tr key={data.year} className="border-t">
-                                <td className="px-4 py-2 text-sm text-gray-700">{data.year}</td>
-                                <td className="px-4 py-2 text-sm text-gray-700">{data.population.toLocaleString()}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                <PopulationChart populationData={country.populationData} />
             </section>
         </div>
     );
