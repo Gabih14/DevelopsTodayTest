@@ -33,7 +33,7 @@ export default async function CountryPage({ params }: { params: { code: string }
         return (
             <div className="text-center mt-10">
                 <h1 className="text-2xl font-semibold text-red-600">Error</h1>
-                <p className="text-gray-500">Could not fetch data for country code: {code}</p>
+                <p className="text-gray-500">Could not fetch data or some of the data is missing for country code: {code}</p>
             </div>
         );
     }
