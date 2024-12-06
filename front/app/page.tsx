@@ -1,12 +1,13 @@
 import Link from 'next/link';
 
 export default async function Home() {
-    const response = await fetch('http://localhost:5000/countries', { cache: 'no-store' });
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`, { cache: 'no-store' });
     const countries = await response.json();
 
     return (
-        <div>
-            <h1>Countries List</h1>
+        <div className="min-h-screen bg-background">
+            <main className="container mx-auto px-4 py-8">
+            <h1 className="text-4xl font-bold mb-8 text-center">Countries List</h1>
             <ul>
                 {countries.map((country: { name: string; code: string }) => (
                     <li key={country.code}>
@@ -14,6 +15,7 @@ export default async function Home() {
                     </li>
                 ))}
             </ul>
+            </main>
         </div>
     );
 }
