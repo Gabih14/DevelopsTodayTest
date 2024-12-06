@@ -21,7 +21,7 @@ interface CountryDetails {
 }
 
 export default async function CountryPage({ params }: { params: { code: string } }) {
-    const { code } = params;
+    const { code } = await params;
 
     // Fetch data from the backend
     const response = await fetch(`http://localhost:5000/countries/details/${code}`, {
