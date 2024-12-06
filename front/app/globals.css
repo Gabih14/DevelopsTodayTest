@@ -19,3 +19,16 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.chart-container {
+  position: relative;
+  width: 100%;     /* El ancho del contenedor se ajustará al contenedor padre */
+  height: 400px;   /* O el tamaño que prefieras */
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    height: 300px;  /* Puedes cambiar la altura en pantallas más pequeñas */
+  }
+}
+

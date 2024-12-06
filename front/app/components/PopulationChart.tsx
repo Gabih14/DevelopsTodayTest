@@ -24,6 +24,7 @@ const PopulationChart = ({ populationData }: { populationData: { year: number; p
         },
         options: {
           responsive: true,
+          maintainAspectRatio: false,
           plugins: {
             title: {
               display: true,
