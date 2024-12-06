@@ -64,7 +64,6 @@ export default async function CountryPage({ params }: { params: { code: string }
             </section>
 
             <section>
-                <h2 className="text-2xl font-semibold text-gray-700 mb-4">Population Over Time</h2>
                 <PopulationChart populationData={country.populationData} />
             </section>
         </div>
